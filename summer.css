@@ -41,3 +41,11 @@ body{background:#faf9f4;background-image:linear-gradient(180deg,#fbfaf5 0%,#f6fa
 .marquee{background:#edf5f1}.lab{background:#edf5f2}.about{background:linear-gradient(140deg,#f6f1df,#e7f2ee)}.creator{background:#edf7f4}.photo{background:#e4f0f1}.movement{background:#f7f1df}.contact{background:radial-gradient(circle at 72% 30%,#dcedef,transparent 30%),radial-gradient(circle at 20% 82%,#f4ebc8,transparent 28%)}
 @media(max-width:900px){.summer-ip{width:138px;height:245px;margin:8px auto -18px}.ip-stage{height:220px}.hero{min-height:980px}}
 @media(max-width:560px){.glass-heading{width:94vw;padding:.36em .24em .4em;border-radius:.5em}.summer-ip{width:120px;height:210px}.ip-stage{height:190px}.hero{min-height:925px}}
+
+/* Glass belongs to the title; supporting surfaces stay clean and solid. */
+.nav{background:#fbfaf5f2;backdrop-filter:none;box-shadow:0 12px 36px #315b6410}
+.ip-note{background:#fbfaf5;border-color:#e3ebe7;backdrop-filter:none;box-shadow:0 8px 22px #315b6412}
+.lab-card{background:#f9fbf8;backdrop-filter:none}.deck-card>div:last-child{backdrop-filter:none}
+.glass-heading{overflow:hidden;isolation:isolate;background:linear-gradient(135deg,#ffffffa8 0%,#dff3f184 46%,#ffffff75 100%);border-color:#ffffffdc;box-shadow:inset 0 1px 1px #fff,inset 0 -18px 35px #a9d8d82b,0 30px 85px #315b6418}
+.glass-heading:before{content:"";position:absolute;z-index:-1;inset:-80% -20%;background:linear-gradient(105deg,transparent 35%,#ffffff9c 48%,transparent 60%);transform:translateX(-60%) rotate(8deg);animation:glassShine 7s ease-in-out infinite}
+@keyframes glassShine{0%,18%{transform:translateX(-65%) rotate(8deg)}55%,100%{transform:translateX(65%) rotate(8deg)}}
