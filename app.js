@@ -21,6 +21,13 @@ if(!reduceMotion){
       ipImage.style.setProperty('--ip-x',`${y}deg`);
     });
   }
+  const helloGlass=document.querySelector('.glass-heading img');
+  if(helloGlass){
+    addEventListener('pointermove',e=>{
+      helloGlass.style.setProperty('--hello-y',`${(e.clientX/innerWidth-.5)*5}deg`);
+      helloGlass.style.setProperty('--hello-x',`${(e.clientY/innerHeight-.5)*-3}deg`);
+    });
+  }
 }
 const reel=document.querySelector('#showreel');
 const openReel=()=>{reel.classList.add('open');reel.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'};
