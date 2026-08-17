@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 - Job</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fira Sans', 'Fira Sans', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f5f7fa;
+            color: #1f2329;
+            line-height: 1.5;
+        }
+
+        /* 顶部导航栏 */
+        .top-header {
+            background: #fff;
+            height: 60px;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #0052d9 0%, #3a84ff 50%, #699eff 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(58, 132, 255, 0.25);
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 8px;
+            margin-left: 48px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #646a73;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+        }
+
+        .nav-item:hover {
+            color: #0052d9;
+            background: rgba(0, 82, 217, 0.06);
+        }
+
+        .nav-item.active {
+            color: #0052d9;
+            background: rgba(0, 82, 217, 0.1);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: #646a73;
+            font-size: 14px;
+        }
+
+        .header-right > span {
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .header-right > span:hover {
+            background: rgba(0, 0, 0, 0.04);
+            color: #0052d9;
+        }
+
+        /* 主内容区 */
+        .main-container {
+            padding: 24px 32px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            margin-bottom: 24px;
+        }
+
+        .page-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1f2329;
+            margin-bottom: 8px;
+        }
+
+        .page-desc {
+            font-size: 14px;
+            color: #8f959e;
+        }
+
+        /* 执行入口卡片 */
+        .entry-cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .entry-card {
+            background: white;
+            border-radius: 12px;
+            padding: 14px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .entry-card:hover {
+            box-shadow: 0 4px 12px rgba(0,82,217,0.08), 0 2px 4px rgba(0,0,0,0.04);
+            border-color: rgba(0, 82, 217, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .card-icon.blue {
+            background: linear-gradient(135deg, #e6f0ff 0%, #cce0ff 100%);
+        }
+
+        .card-icon.green {
+            background: linear-gradient(135deg, #e6fff2 0%, #ccffe6 100%);
+        }
+
+        .card-icon.orange {
+            background: linear-gradient(135deg, #fff4e6 0%, #ffe6cc 100%);
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1f2329;
+            margin-bottom: 6px;
+        }
+
+        .card-desc {
+            font-size: 12px;
+            color: #8f959e;
+            line-height: 1.45;
+            margin-bottom: 10px;
+            min-height: 34px;
+        }
+
+        .card-button {
+            width: 100%;
+            padding: 7px;
+            background: #0052d9;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .card-button:hover {
+            background: #0041ad;
+        }
+
+        /* 最近作业列表 */
+        .recent-jobs {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1f2329;
+        }
+
+        .view-all {
+            font-size: 14px;
+            color: #0052d9;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .view-all:hover {
+            color: #0041ad;
+        }
+
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: #f5f7fa;
+        }
+
+        th {
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 600;
+            color: #646a73;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #f0f1f5;
+            transition: all 0.2s;
+        }
+
+        tbody tr:hover {
+            background: #f9fafb;
+        }
+
+        td {
+            padding: 16px;
+            font-size: 14px;
+            color: #1f2329;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-badge.success {
+            background: #e6fff2;
+            color: #00a870;
+        }
+
+        .status-badge.running {
+            background: #e6f0ff;
+            color: #0052d9;
+        }
+
+        .status-badge.failed {
+            background: #ffe6e6;
+            color: #ea3636;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .action-link {
+            color: #0052d9;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .action-link:hover {
+            color: #0041ad;
+        }
+
+        .job-type-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            background: #f5f7fa;
+            color: #646a73;
+        }
+        .source-badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; }
+        .source-badge.manual { background: #e6f0ff; color: #0052d9; }
+        .source-badge.scheduled { background: #fff4e6; color: #d46b08; }
+        .source-badge.api { background: #f0f1f5; color: #646a73; }
+
+        /* 运行概览（紧凑版） */
+        .overview-panel {
+            margin-bottom: 8px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .overview-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .overview-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1f2329;
+        }
+
+        .overview-range {
+            font-size: 11px;
+            color: #8f959e;
+        }
+
+        .overview-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .preview-empty-btn {
+            border: 1px solid #c6d6ff;
+            background: #edf3ff;
+            color: #165dff;
+            font-size: 11px;
+            line-height: 1;
+            border-radius: 6px;
+            padding: 6px 9px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .preview-empty-btn:hover {
+            background: #e2ecff;
+            border-color: #a9c1ff;
+        }
+
+        .toggle-group {
+            display: inline-flex;
+            background: #f5f7fa;
+            border-radius: 8px;
+            padding: 2px;
+        }
+
+        .toggle-group.disabled {
+            background: #f1f3f7;
+            opacity: 0.85;
+        }
+
+        .toggle-btn {
+            border: none;
+            background: transparent;
+            color: #646a73;
+            font-size: 11px;
+            line-height: 1;
+            padding: 6px 9px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .toggle-btn.active {
+            background: #fff;
+            color: #0052d9;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+        }
+
+        .toggle-group.disabled .toggle-btn {
+            color: #aab1bd;
+            cursor: not-allowed;
+        }
+
+        .toggle-group.disabled .toggle-btn.active {
+            background: #f1f3f7;
+            color: #aab1bd;
+            box-shadow: none;
+        }
+
+        .overview-content {
+            display: grid;
+            grid-template-columns: 160px minmax(0, 1fr);
+            gap: 4px;
+            align-items: stretch;
+            min-height: 102px;
+        }
+
+        .overview-content.empty-mode {
+            grid-template-columns: 1fr;
+            min-height: 170px;
+        }
+
+        .overview-content.empty-mode .overview-kpis,
+        .overview-content.empty-mode .chart-card {
+            display: none;
+        }
+
+        .overview-empty-state {
+            display: none;
+            grid-template-columns: 1.02fr 1.28fr;
+            gap: 14px;
+            border: 1px dashed #d4ddec;
+            border-radius: 10px;
+            background: linear-gradient(180deg, #fcfdff 0%, #f7f9fc 100%);
+            padding: 14px;
+        }
+
+        .overview-content.empty-mode .overview-empty-state {
+            display: grid;
+        }
+
+        .empty-guide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+            padding: 8px;
+            border-right: 1px solid #e8edf5;
+        }
+
+        .empty-guide-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            border: 1px solid #cfe0ff;
+            background: linear-gradient(145deg, #eef4ff 0%, #f7faff 100%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #5e7ebf;
+        }
+
+        .empty-guide-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1f2329;
+        }
+
+        .empty-guide-desc {
+            font-size: 12px;
+            color: #8f959e;
+            line-height: 1.5;
+            max-width: 320px;
+        }
+
+        .empty-guide-btn {
+            width: max-content;
+            margin-top: 2px;
+            text-decoration: none;
+            border-radius: 8px;
+            background: #165dff;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 7px 12px;
+            box-shadow: 0 3px 8px rgba(22, 93, 255, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .empty-guide-btn:hover {
+            background: #0e4dd8;
+            box-shadow: 0 4px 10px rgba(22, 93, 255, 0.26);
+        }
+
+        .empty-values {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            padding: 8px 6px;
+        }
+
+        .empty-values-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1f2329;
+        }
+
+        .empty-values-list {
+            list-style: none;
+            display: grid;
+            gap: 7px;
+            color: #4e5969;
+            font-size: 12px;
+            line-height: 1.45;
+        }
+
+        .empty-values-footnote {
+            margin-top: 2px;
+            color: #9aa1ad;
+            font-size: 11px;
+        }
+
+        .overview-kpis {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2px;
+        }
+
+        .overview-kpi {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 3px 6px;
+            background: #fff;
+            min-height: 54px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .overview-kpi-label {
+            color: #8f959e;
+            font-size: 11px;
+            margin-bottom: 2px;
+        }
+
+        .overview-kpi-value {
+            color: #1f2329;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1px;
+        }
+
+        .overview-kpi-value.success {
+            color: #00a870;
+        }
+
+        .overview-kpi-desc {
+            color: #8f959e;
+            font-size: 10px;
+        }
+
+        .chart-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 3px 5px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .panel-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #1f2329;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .panel-hint {
+            font-size: 11px;
+            color: #8f959e;
+        }
+
+        .chart-first-tip {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            font-size: 11px;
+            color: #007a53;
+            background: #e8fff4;
+            border: 1px solid #bcebd7;
+            border-radius: 999px;
+            padding: 1px 8px;
+            opacity: 0;
+            transform: translateY(-3px);
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .chart-first-tip.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chart-wrap {
+            flex: 1;
+            min-height: 82px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-line {
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .chart-line.hidden {
+            opacity: 0;
+            transform: translateY(4px);
+            pointer-events: none;
+        }
+
+        .chart-line svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .line-grid {
+            stroke: #edf1f6;
+            stroke-width: 1;
+            stroke-dasharray: 3 3;
+        }
+
+        .line-axis {
+            stroke: #d5dbe6;
+            stroke-width: 1;
+        }
+
+        .line-success-area {
+            fill: rgba(0, 168, 112, 0.1);
+        }
+
+        .line-failed-area {
+            fill: rgba(234, 54, 54, 0.06);
+        }
+
+        .line-success-series,
+        .line-failed-series {
+            fill: none;
+            stroke-width: 2.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .line-success-series {
+            stroke: #00a870;
+        }
+
+        .line-failed-series {
+            stroke: #ea3636;
+            stroke-dasharray: 5 4;
+        }
+
+        .line-point {
+            fill: #ffffff;
+            stroke-width: 2.2;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .line-point.success {
+            stroke: #00a870;
+        }
+
+        .line-point.failed {
+            stroke: #ea3636;
+        }
+
+        .line-point.success:hover {
+            fill: #e6fff2;
+            r: 5;
+        }
+
+        .line-point.failed:hover {
+            fill: #ffe6e6;
+            r: 5;
+        }
+
+        .line-x {
+            fill: #808895;
+            font-size: 8px;
+        }
+
+        .line-point-label {
+            font-size: 7px;
+            font-weight: 700;
+            text-anchor: middle;
+            paint-order: stroke;
+            stroke: #ffffff;
+            stroke-width: 3px;
+            stroke-linejoin: round;
+        }
+
+        .line-point-label.success {
+            fill: #00a870;
+        }
+
+        .line-point-label.failed {
+            fill: #ea3636;
+        }
+
+        .chart-tooltip {
+            position: absolute;
+            z-index: 3;
+            pointer-events: none;
+            background: rgba(31, 35, 41, 0.94);
+            color: #fff;
+            font-size: 12px;
+            border-radius: 8px;
+            padding: 8px 10px;
+            line-height: 1.45;
+            min-width: 112px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+            transform: translate(-50%, -115%);
+            opacity: 0;
+            transition: opacity 0.15s;
+        }
+
+        .chart-tooltip.show {
+            opacity: 1;
+        }
+
+        .chart-legend {
+            margin-top: 1px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #646a73;
+            font-size: 11px;
+            flex-wrap: wrap;
+            transition: opacity 0.25s ease;
+        }
+
+        .chart-legend.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border-radius: 999px;
+            padding: 2px 7px;
+            font-weight: 600;
+            font-size: 11px;
+            border: 1px solid transparent;
+        }
+
+        .legend-pill.success {
+            color: #007a53;
+            background: #e6fff2;
+            border-color: #bcebd7;
+        }
+
+        .legend-pill.failed {
+            color: #c22a2a;
+            background: #ffecec;
+            border-color: #f6c6c6;
+        }
+
+        .legend-line {
+            width: 18px;
+            height: 0;
+            border-top: 2px solid currentColor;
+            position: relative;
+        }
+
+        .legend-line::after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            border: 1.5px solid currentColor;
+            background: #fff;
+            position: absolute;
+            right: 0;
+            top: -5px;
+        }
+
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+    
+        /* ===== UI/UX ENHANCEMENTS ===== */
+        
+        /* Focus states for accessibility */
+        a:focus-visible, button:focus-visible, input:focus-visible, 
+        select:focus-visible, textarea:focus-visible, 
+        [tabindex]:focus-visible, .nav-item:focus-visible,
+        .sub-nav-item:focus-visible {
+            outline: 2px solid #0052d9;
+            outline-offset: 2px;
+        }
+
+        /* Enhanced table row hover */
+        tbody tr {
+            border-left: 3px solid transparent;
+        }
+        tbody tr:hover {
+            background: #f0f5ff !important;
+            border-left: 3px solid #0052d9;
+        }
+
+        /* Inline SVG icon alignment */
+        .nav-item svg, .sub-nav-item svg, .header-right svg {
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media (max-width: 1280px) {
+            .entry-cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .overview-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 16px;
+            }
+
+            .entry-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .overview-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .overview-controls {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .overview-content.empty-mode .overview-empty-state {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .empty-guide {
+                border-right: none;
+                border-bottom: 1px solid #e8edf5;
+                padding-bottom: 12px;
+            }
+        }
+
+    
+        /* Table responsive wrapper */
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .table-responsive table {
+            min-width: 100%;
+        }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <div class="top-header">
+        <div class="header-left">
+            <div class="logo">
+                <div class="logo-icon">BK</div>
+                <span>Job</span>
+            </div>
+            <nav class="header-nav">
+                <div class="nav-item active" onclick="location.href='首页.html'"><span style="display:inline-flex;align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span>首页</span></div>
+                <div class="nav-item" onclick="location.href='快速执行.html'"><span style="display:inline-flex;align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></span><span>作业执行</span></div>
+                <div class="nav-item" onclick="location.href='脚本库.html'"><span style="display:inline-flex;align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span><span>作业模版</span></div>
+                <div class="nav-item" onclick="location.href='目标管理.html'"><span style="display:inline-flex;align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><span>目标管理</span></div>
+                <div class="nav-item" onclick="location.href='高危命令配置.html'"><span style="display:inline-flex;align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span><span>系统配置</span></div>
+            </nav>
+        </div>
+        <div class="header-right">
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> 帮助文档</span>
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> 语言: 简体中文</span>
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Admin</span>
+        </div>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="main-container">
+        <!-- 页面标题 -->
+        <div class="page-header">
+            <h1 class="page-title">作业管理系统</h1>
+            <p class="page-desc">快速创建并执行作业，统一管理脚本执行、文件分发和定时任务</p>
+        </div>
+
+        <!-- 执行入口卡片 -->
+        <div class="entry-cards">
+            <div class="entry-card">
+                <div class="card-icon blue"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
+                <div class="card-title">脚本执行</div>
+                <div class="card-desc">在目标主机上快速执行 Shell 或 Python 脚本，支持从脚本库选择或临时输入</div>
+                <button class="card-button" onclick="location.href='快速执行.html'">进入</button>
+            </div>
+
+            <div class="entry-card">
+                <div class="card-icon green"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+                <div class="card-title">文件分发</div>
+                <div class="card-desc">将文件或目录批量分发到目标主机，支持覆盖策略和并发控制</div>
+                <button class="card-button" onclick="location.href='文件分发.html'">进入</button>
+            </div>
+
+            <div class="entry-card">
+                <div class="card-icon orange"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                <div class="card-title">定时任务</div>
+                <div class="card-desc">创建和管理周期性执行的作业，支持 Cron 表达式和自定义执行策略</div>
+                <button class="card-button" onclick="location.href='定时任务.html'">进入</button>
+            </div>
+        </div>
+
+        <!-- 运行概览（紧凑版） -->
+        <section class="overview-panel" aria-label="运行概览">
+            <div class="overview-header">
+                <div>
+                    <h2 class="overview-title">运行概览</h2>
+                    <div class="overview-range" id="overviewRangeText">统计范围：近7天</div>
+                </div>
+                <div class="overview-controls">
+                    <button type="button" class="preview-empty-btn" id="previewEmptyBtn">查看图表</button>
+                    <div class="toggle-group" id="rangeToggle">
+                        <button class="toggle-btn active" data-range="7d">近7天</button>
+                        <button class="toggle-btn" data-range="30d">近30天</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-content">
+                <div class="overview-kpis">
+                    <article class="overview-kpi">
+                        <div class="overview-kpi-label">执行总数</div>
+                        <div class="overview-kpi-value" id="totalJobs">186</div>
+                        <div class="overview-kpi-desc" id="totalMeta">成功 176 / 失败 10</div>
+                    </article>
+                    <article class="overview-kpi">
+                        <div class="overview-kpi-label">成功率</div>
+                        <div class="overview-kpi-value success" id="successRate">94.6%</div>
+                        <div class="overview-kpi-desc" id="successMeta">较上周期 +1.9%</div>
+                    </article>
+                </div>
+
+                <article class="chart-card">
+                    <div class="panel-title">
+                        <span class="panel-hint" id="trendHint">执行趋势</span>
+                    </div>
+                    <div class="chart-wrap">
+                        <div class="chart-line" id="lineChart"></div>
+                        <div class="chart-tooltip" id="chartTooltip"></div>
+                    </div>
+                    <div class="chart-legend" id="chartLegend">
+                        <span class="legend-pill success">
+                            <span class="legend-line"></span>
+                            成功
+                        </span>
+                        <span class="legend-pill failed">
+                            <span class="legend-line"></span>
+                            失败
+                        </span>
+                        <span class="panel-hint">悬停查看成功/失败/总执行</span>
+                    </div>
+                    <div class="chart-first-tip" id="firstTrendTip">已生成你的执行趋势</div>
+                </article>
+
+                <section class="overview-empty-state" id="overviewEmptyState" aria-live="polite">
+                    <div class="empty-guide">
+                        <span class="empty-guide-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.5 7.5C3.5 6.67 4.17 6 5 6H9L10.6 7.6C10.88 7.88 11.26 8.03 11.65 8H19C19.83 8 20.5 8.67 20.5 9.5V17.5C20.5 18.33 19.83 19 19 19H5C4.17 19 3.5 18.33 3.5 17.5V7.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                <circle cx="15.2" cy="13.2" r="3.1" stroke="#165DFF" stroke-width="1.4"/>
+                                <path d="M14.3 12V14.4L16.4 13.2L14.3 12Z" fill="#165DFF"/>
+                            </svg>
+                        </span>
+                        <div class="empty-guide-title">还没有执行过作业哦~</div>
+                        <div class="empty-guide-desc">执行一次脚本或任务后，这里将展示你的执行统计</div>
+                        <a class="empty-guide-btn" href="快速执行.html">👉 去执行第一个作业</a>
+                    </div>
+
+                    <div class="empty-values">
+                        <div class="empty-values-title">运行概览能帮你做什么？</div>
+                        <ul class="empty-values-list">
+                            <li>📊 实时统计作业执行总数与成功率</li>
+                            <li>📈 可视化展示近 7 天 / 30 天执行趋势</li>
+                        </ul>
+                        <div class="empty-values-footnote">执行作业后，这里将自动展示你的数据图表</div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- 最近作业列表 -->
+        <div class="recent-jobs">
+            <div class="section-header">
+                <h2 class="section-title">最近作业</h2>
+                <span class="view-all" onclick="location.href='作业记录.html'">查看全部 →</span>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>作业名称</th>
+                        <th>作业类型</th>
+                        <th>触发来源</th>
+                        <th>执行状态</th>
+                        <th>开始时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>清理磁盘空间</td>
+                        <td><span class="job-type-badge">脚本执行</span></td>
+                        <td><span class="source-badge manual">手动执行</span></td>
+                        <td><span class="status-badge success"><span class="status-dot"></span>成功</span></td>
+                        <td>2026-01-20 14:23:15</td>
+                        <td><a href="作业详情.html" class="action-link">查看详情</a></td>
+                    </tr>
+                    <tr>
+                        <td>部署配置文件</td>
+                        <td><span class="job-type-badge">文件分发</span></td>
+                        <td><span class="source-badge manual">手动执行</span></td>
+                        <td><span class="status-badge running"><span class="status-dot"></span>执行中</span></td>
+                        <td>2026-01-20 14:18:42</td>
+                        <td><a href="作业详情-文件分发.html" class="action-link">查看详情</a></td>
+                    </tr>
+                    <tr>
+                        <td>数据库备份</td>
+                        <td><span class="job-type-badge">脚本执行</span></td>
+                        <td><span class="source-badge scheduled">定时任务</span></td>
+                        <td><span class="status-badge success"><span class="status-dot"></span>成功</span></td>
+                        <td>2026-01-20 14:00:00</td>
+                        <td><a href="作业详情.html" class="action-link">查看详情</a></td>
+                    </tr>
+                    <tr>
+                        <td>应用部署流水线</td>
+                        <td><span class="job-type-badge">Playbook</span></td>
+                        <td><span class="source-badge api">API 调用</span></td>
+                        <td><span class="status-badge success"><span class="status-dot"></span>成功</span></td>
+                        <td>2026-01-20 13:30:00</td>
+                        <td><a href="作业详情-Playbook.html" class="action-link">查看详情</a></td>
+                    </tr>
+                    <tr>
+                        <td>日志清理</td>
+                        <td><span class="job-type-badge">脚本执行</span></td>
+                        <td><span class="source-badge scheduled">定时任务</span></td>
+                        <td><span class="status-badge success"><span class="status-dot"></span>成功</span></td>
+                        <td>2026-01-20 12:00:00</td>
+                        <td><a href="作业详情.html" class="action-link">查看详情</a></td>
+                    </tr>
+                    <tr>
+                        <td>更新应用配置</td>
+                        <td><span class="job-type-badge">文件分发</span></td>
+                        <td><span class="source-badge api">API 调用</span></td>
+                        <td><span class="status-badge failed"><span class="status-dot"></span>失败</span></td>
+                        <td>2026-01-20 11:30:25</td>
+                        <td><a href="作业详情-文件分发.html" class="action-link">查看详情</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const trendData = {
+            '7d': {
+                rangeLabel: '近7天',
+                hint: '按天统计（日级）',
+                success: [22, 25, 28, 27, 31, 22, 21],
+                failed: [2, 2, 3, 2, 2, 1, 1],
+                xLabels: ['3/12', '3/13', '3/14', '3/15', '3/16', '3/17', '3/18'],
+                successMeta: '较上周期 +1.9%'
+            },
+            '30d': {
+                rangeLabel: '近30天',
+                hint: '按周区间聚合',
+                success: [128, 133, 140, 146],
+                failed: [8, 7, 8, 9],
+                xLabels: ['2/19-2/25', '2/26-3/4', '3/5-3/11', '3/12-3/18'],
+                successMeta: '较上周期 +3.2%'
+            }
+        };
+
+        let currentRange = '7d';
+        const rangeTextEl = document.getElementById('overviewRangeText');
+        const trendHintEl = document.getElementById('trendHint');
+        const totalJobsEl = document.getElementById('totalJobs');
+        const totalMetaEl = document.getElementById('totalMeta');
+        const successRateEl = document.getElementById('successRate');
+        const successMetaEl = document.getElementById('successMeta');
+        const overviewContentEl = document.querySelector('.overview-content');
+        const overviewEmptyStateEl = document.getElementById('overviewEmptyState');
+        const rangeToggleEl = document.getElementById('rangeToggle');
+        const previewEmptyBtnEl = document.getElementById('previewEmptyBtn');
+        const toggleBtnEls = Array.from(document.querySelectorAll('#rangeToggle .toggle-btn'));
+        const lineChartEl = document.getElementById('lineChart');
+        const chartLegendEl = document.getElementById('chartLegend');
+        const firstTrendTipEl = document.getElementById('firstTrendTip');
+        const chartTooltipEl = document.getElementById('chartTooltip');
+        let hasRealDataEver = false;
+        let hasShownFirstTrendTip = false;
+        let forceEmptyPreview = true;
+
+        function hasExecutionData(success, failed) {
+            return success.some((item) => item > 0) || failed.some((item) => item > 0);
+        }
+
+        function setChartVisibility(showChart) {
+            lineChartEl.classList.toggle('hidden', !showChart);
+            chartLegendEl.classList.toggle('hidden', !showChart);
+        }
+
+        function setToggleEnabled(enabled) {
+            rangeToggleEl.classList.toggle('disabled', !enabled);
+            toggleBtnEls.forEach((btn) => {
+                btn.disabled = !enabled;
+            });
+        }
+
+        function setOverviewEmptyMode(isEmpty) {
+            overviewContentEl.classList.toggle('empty-mode', isEmpty);
+            overviewEmptyStateEl.hidden = !isEmpty;
+            setToggleEnabled(!isEmpty);
+            previewEmptyBtnEl.textContent = isEmpty ? '查看图表' : '预览空态';
+        }
+
+        function showFirstTrendTip() {
+            firstTrendTipEl.classList.add('show');
+            window.setTimeout(() => firstTrendTipEl.classList.remove('show'), 2400);
+        }
+
+        function calcSummary(success, failed) {
+            const totalSuccess = success.reduce((sum, item) => sum + item, 0);
+            const totalFailed = failed.reduce((sum, item) => sum + item, 0);
+            const total = totalSuccess + totalFailed;
+            const rate = total === 0 ? 0 : (totalSuccess / total) * 100;
+            return { totalSuccess, totalFailed, total, rate };
+        }
+
+        function renderLineChart(labels, success, failed) {
+            const width = 640;
+            const height = 100;
+            const padding = { top: 8, right: 12, bottom: 20, left: 12 };
+            const plotWidth = width - padding.left - padding.right;
+            const plotHeight = height - padding.top - padding.bottom;
+            const maxRawValue = Math.max(...success, ...failed, 1);
+            const maxValue = Math.ceil(maxRawValue * 1.2);
+            const stepX = labels.length > 1 ? plotWidth / (labels.length - 1) : 0;
+
+            const successPoints = success.map((value, index) => {
+                const x = padding.left + stepX * index;
+                const y = padding.top + plotHeight - (value / maxValue) * plotHeight;
+                return { x, y, value, label: labels[index], success: success[index], failed: failed[index] };
+            });
+
+            const failedPoints = failed.map((value, index) => {
+                const x = padding.left + stepX * index;
+                const y = padding.top + plotHeight - (value / maxValue) * plotHeight;
+                return { x, y, value, label: labels[index], success: success[index], failed: failed[index] };
+            });
+
+            const buildSmoothPath = (points) => {
+                if (!points.length) return '';
+                if (points.length === 1) return `M ${points[0].x} ${points[0].y}`;
+
+                let d = `M ${points[0].x} ${points[0].y}`;
+                for (let i = 0; i < points.length - 1; i += 1) {
+                    const p0 = i === 0 ? points[i] : points[i - 1];
+                    const p1 = points[i];
+                    const p2 = points[i + 1];
+                    const p3 = i + 2 < points.length ? points[i + 2] : p2;
+
+                    const cp1x = p1.x + (p2.x - p0.x) / 6;
+                    const cp1y = p1.y + (p2.y - p0.y) / 6;
+                    const cp2x = p2.x - (p3.x - p1.x) / 6;
+                    const cp2y = p2.y - (p3.y - p1.y) / 6;
+
+                    d += ` C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${p2.x} ${p2.y}`;
+                }
+                return d;
+            };
+
+            const successPath = buildSmoothPath(successPoints);
+            const failedPath = buildSmoothPath(failedPoints);
+
+            const baselineY = padding.top + plotHeight;
+            const successAreaPath = `${successPath} L ${successPoints[successPoints.length - 1].x} ${baselineY} L ${successPoints[0].x} ${baselineY} Z`;
+            const failedAreaPath = `${failedPath} L ${failedPoints[failedPoints.length - 1].x} ${baselineY} L ${failedPoints[0].x} ${baselineY} Z`;
+
+            const gridLines = [0.2, 0.4, 0.6, 0.8].map((ratio) => {
+                const y = padding.top + plotHeight * ratio;
+                return `<line class="line-grid" x1="${padding.left}" y1="${y}" x2="${padding.left + plotWidth}" y2="${y}" />`;
+            }).join('');
+
+            const xLabels = successPoints.map((point, index) => {
+                const isFirst = index === 0;
+                const isLast = index === successPoints.length - 1;
+                const anchor = isFirst ? 'start' : (isLast ? 'end' : 'middle');
+                const x = isFirst
+                    ? Math.max(2, point.x - 10)
+                    : (isLast ? Math.min(width - 2, point.x + 10) : point.x);
+                return `<text class="line-x" x="${x}" y="${height - 8}" text-anchor="${anchor}">${point.label}</text>`;
+            }).join('');
+
+            const safeLabelY = (pointY, preferAbove = true, extraOffset = 0) => {
+                const topLimit = 10;
+                const bottomLimit = height - 20;
+                const aboveY = pointY - (10 + extraOffset);
+                const belowY = pointY + (11 + extraOffset);
+
+                if (preferAbove) {
+                    if (aboveY >= topLimit) return aboveY;
+                    return Math.min(belowY, bottomLimit);
+                }
+
+                if (belowY <= bottomLimit) return belowY;
+                return Math.max(aboveY, topLimit);
+            };
+
+            const successLabelYs = successPoints.map((point) => safeLabelY(point.y, true));
+
+            const successLabels = successPoints.map((point, index) => {
+                return `<text class="line-point-label success" x="${point.x}" y="${successLabelYs[index]}">${point.value}</text>`;
+            }).join('');
+
+            const failedLabels = failedPoints.map((point, index) => {
+                const nearSuccessLine = Math.abs(point.y - successPoints[index].y) < 12;
+                let y = safeLabelY(point.y, false, nearSuccessLine ? 2 : 0);
+
+                if (Math.abs(y - successLabelYs[index]) < 10) {
+                    y = safeLabelY(point.y, true, 2);
+                }
+
+                return `<text class="line-point-label failed" x="${point.x}" y="${y}">${point.value}</text>`;
+            }).join('');
+
+            const successCircles = successPoints.map((point, index) => {
+                return `
+                    <circle
+                        class="line-point success"
+                        cx="${point.x}"
+                        cy="${point.y}"
+                        r="4"
+                        data-index="${index}"
+                        data-series="success"
+                        data-label="${point.label}"
+                        data-value="${point.value}"
+                        data-success="${point.success}"
+                        data-failed="${point.failed}"
+                    ></circle>
+                `;
+            }).join('');
+
+            const failedCircles = failedPoints.map((point, index) => {
+                return `
+                    <circle
+                        class="line-point failed"
+                        cx="${point.x}"
+                        cy="${point.y}"
+                        r="4"
+                        data-index="${index}"
+                        data-series="failed"
+                        data-label="${point.label}"
+                        data-value="${point.value}"
+                        data-success="${point.success}"
+                        data-failed="${point.failed}"
+                    ></circle>
+                `;
+            }).join('');
+
+            lineChartEl.innerHTML = `
+                <svg viewBox="0 0 ${width} ${height}" aria-label="执行趋势折线图">
+                    <defs>
+                        <linearGradient id="successAreaGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#00a870" stop-opacity="0.22" />
+                            <stop offset="100%" stop-color="#00a870" stop-opacity="0" />
+                        </linearGradient>
+                        <linearGradient id="failedAreaGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#ea3636" stop-opacity="0.14" />
+                            <stop offset="100%" stop-color="#ea3636" stop-opacity="0" />
+                        </linearGradient>
+                    </defs>
+                    ${gridLines}
+                    <line class="line-axis" x1="${padding.left}" y1="${padding.top + plotHeight}" x2="${padding.left + plotWidth}" y2="${padding.top + plotHeight}" />
+                    <path class="line-success-area" d="${successAreaPath}" fill="url(#successAreaGradient)" />
+                    <path class="line-failed-area" d="${failedAreaPath}" fill="url(#failedAreaGradient)" />
+                    <path class="line-success-series" d="${successPath}" />
+                    <path class="line-failed-series" d="${failedPath}" />
+                    ${successLabels}
+                    ${failedLabels}
+                    ${successCircles}
+                    ${failedCircles}
+                    ${xLabels}
+                </svg>
+            `;
+
+            const pointEls = lineChartEl.querySelectorAll('.line-point');
+            pointEls.forEach((pointEl) => {
+                pointEl.addEventListener('mouseenter', (event) => {
+                    const target = event.currentTarget;
+                    const label = target.getAttribute('data-label');
+                    const series = target.getAttribute('data-series');
+                    const value = target.getAttribute('data-value');
+                    const successCount = target.getAttribute('data-success');
+                    const failedCount = target.getAttribute('data-failed');
+                    const total = Number(successCount) + Number(failedCount);
+                    const seriesName = series === 'success' ? '成功线' : '失败线';
+
+                    chartTooltipEl.innerHTML = `${label} (${seriesName})<br>当前值: ${value}<br>成功: ${successCount} | 失败: ${failedCount}<br>总执行: ${total}`;
+                    chartTooltipEl.classList.add('show');
+                });
+
+                pointEl.addEventListener('mousemove', (event) => {
+                    const chartRect = lineChartEl.getBoundingClientRect();
+                    const x = event.clientX - chartRect.left;
+                    const y = event.clientY - chartRect.top;
+                    chartTooltipEl.style.left = `${x}px`;
+                    chartTooltipEl.style.top = `${y}px`;
+                });
+
+                pointEl.addEventListener('mouseleave', () => {
+                    chartTooltipEl.classList.remove('show');
+                });
+            });
+        }
+
+        function updateOverview() {
+            const data = trendData[currentRange];
+            const { totalSuccess, totalFailed, total, rate } = calcSummary(data.success, data.failed);
+            const hasRealData = hasExecutionData(data.success, data.failed);
+            const hasAnyData = !forceEmptyPreview && Object.values(trendData).some((item) => hasExecutionData(item.success, item.failed));
+
+            rangeTextEl.textContent = hasAnyData ? `统计范围：${data.rangeLabel}` : '统计范围：暂无数据';
+            trendHintEl.textContent = '执行趋势';
+            totalJobsEl.textContent = total;
+            totalMetaEl.textContent = `成功 ${totalSuccess} / 失败 ${totalFailed}`;
+            successRateEl.textContent = `${rate.toFixed(1)}%`;
+            successMetaEl.textContent = data.successMeta;
+
+            if (!hasAnyData) {
+                setOverviewEmptyMode(true);
+                lineChartEl.innerHTML = '';
+                chartTooltipEl.classList.remove('show');
+                setChartVisibility(false);
+                return;
+            }
+
+            setOverviewEmptyMode(false);
+
+            if (hasRealData) {
+                setChartVisibility(true);
+                renderLineChart(data.xLabels, data.success, data.failed);
+
+                if (!hasRealDataEver && !hasShownFirstTrendTip) {
+                    showFirstTrendTip();
+                    hasShownFirstTrendTip = true;
+                }
+                hasRealDataEver = true;
+                return;
+            }
+
+            lineChartEl.innerHTML = '';
+            setChartVisibility(false);
+        }
+
+        document.getElementById('rangeToggle').addEventListener('click', (event) => {
+            const btn = event.target.closest('button[data-range]');
+            if (!btn || btn.dataset.range === currentRange) return;
+
+            currentRange = btn.dataset.range;
+            document.querySelectorAll('#rangeToggle .toggle-btn').forEach((item) => item.classList.remove('active'));
+            btn.classList.add('active');
+            updateOverview();
+        });
+
+        previewEmptyBtnEl.addEventListener('click', () => {
+            forceEmptyPreview = !forceEmptyPreview;
+            updateOverview();
+        });
+
+        updateOverview();
+        console.log('首页加载完成');
+    </script>
+
+</body>
+</html>

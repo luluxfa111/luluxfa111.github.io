@@ -13,4 +13,4 @@
 
 使用 Bodymovin/LottieFiles 导出 JSON，避免位图模糊；仅使用 Position、Scale、Rotation、Opacity、Trim Paths 和基础 Shape Layer。导出后放入 `assets/motion/`，再将网页中的 CSS 动效替换为 Lottie 播放器即可。
 
-`build-motion.jsx` 可在 AE 的 File → Scripts → Run Script File 中运行，用于生成“IDEA 到 PRODUCT”基础时间轴。
+`build-motion.jsx` 用于生成“IDEA 到 PRODUCT”文字节奏片；`hero-card-fan.jsx` 会生成与网站首屏对应的五张作品卡展开动画。两者均可在 AE 的 File → Scripts → Run Script File 中运行。
