@@ -69,3 +69,6 @@ body{background:#fcfbf7;background-image:linear-gradient(180deg,#fffefa,#f7fbfa 
 .eyebrow,.hero-rail{color:#52717a}.hero-manifesto strong{color:#233d47}.hero-manifesto p{color:#647e84}
 .primary{background:#294b57}.ghost{color:#54727a}.nav{background:#fffefaed;border-color:#ffffff}.brand span{background:#d9eef1;color:#355761}.nav-pill{background:#faf2d9;color:#667064}
 .marquee{background:#f2f7f3}.shopline{background:#f2f8f5}.black{background:#f1f6f5}.lime{background:#faf8ee}.violet{background:#f3f6f5}.cream{background:#faf6ef}.lab{background:#f1f7f4}.about{background:linear-gradient(140deg,#faf6e8,#eef6f2)}.creator{background:#f1f8f5}.photo{background:#edf5f5}.movement{background:#faf6ea}
+.hero-manifesto:after{content:"";position:absolute;left:calc(100% + 11vw);top:15%;width:0;height:0;border-top:24px solid transparent;border-bottom:24px solid transparent;border-left:38px solid #89aee0;transform:rotate(-18deg);filter:drop-shadow(0 8px 10px #5d7da326);animation:cursorDrift 4.5s ease-in-out infinite}
+@keyframes cursorDrift{0%,100%{transform:translate(0,0) rotate(-18deg)}50%{transform:translate(14px,-10px) rotate(-12deg)}}
+@media(max-width:560px){.hero-manifesto:after{left:auto;right:-16vw;top:6%;transform:scale(.65) rotate(-18deg)}}

@@ -11,16 +11,6 @@ if(!reduceMotion){
   deck.addEventListener('pointerleave',()=>{deck.style.transform='';deck.querySelectorAll('.deck-card').forEach(c=>c.style.marginTop='')});
   addEventListener('scroll',()=>document.querySelectorAll('[data-parallax]').forEach(el=>{const r=el.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)el.style.setProperty('--parallax',`${(r.top-innerHeight/2)*-.025}px`)}),{passive:true});
   document.querySelectorAll('.magnetic').forEach(el=>{el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.12}px,${(e.clientY-r.top-r.height/2)*.12}px)`});el.addEventListener('pointerleave',()=>el.style.transform='')});
-  const summerIp=document.querySelector('#summerIp');
-  const ipImage=summerIp?.querySelector('img');
-  if(summerIp&&ipImage){
-    addEventListener('pointermove',e=>{
-      const x=(e.clientX/innerWidth-.5)*12;
-      const y=(e.clientY/innerHeight-.5)*-7;
-      ipImage.style.setProperty('--ip-y',`${x}deg`);
-      ipImage.style.setProperty('--ip-x',`${y}deg`);
-    });
-  }
   const helloGlass=document.querySelector('.glass-heading img');
   if(helloGlass){
     addEventListener('pointermove',e=>{
