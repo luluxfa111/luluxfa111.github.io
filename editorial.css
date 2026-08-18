@@ -33,3 +33,5 @@ body{background:var(--ed-paper);color:var(--ed-ink)}.grain{opacity:.015}.cursor{
 @keyframes tagFloat{0%,100%{margin-top:0}50%{margin-top:-8px}}
 @media(max-width:900px){.hero{min-height:960px}.portfolio-title{font-size:clamp(48px,8vw,74px)}.deck{width:100%!important;transform:scale(.78)!important;margin-inline:0!important}.hero-manifesto{width:80%}}
 @media(max-width:560px){.hero{min-height:830px;padding:98px 17px 25px}.hero-rail{margin:17px 0 32px}.portfolio-title{font-size:43px;width:100%}.hero-manifesto{display:block;width:90%;margin-top:18px}.hero-manifesto strong{display:block;margin-bottom:8px}.hero-manifesto p{text-align:center;margin:0}.deck{width:130%!important;margin-left:-15%!important;height:280px!important;transform:scale(.58)!important;transform-origin:top center!important}.deck:before{left:15%}.deck:after{right:13%}.scroll-cue{display:none}}
+.hero>.eyebrow{margin-bottom:48px}.portfolio-title{font-size:clamp(46px,5.8vw,82px);line-height:.96}.portfolio-title em{margin-top:4px}
+@media(max-width:560px){.hero>.eyebrow{margin-bottom:34px}.portfolio-title{font-size:39px}}
