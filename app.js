@@ -5,6 +5,8 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 if(!reduceMotion){
   const cursor=document.querySelector('.cursor');
   addEventListener('pointermove',e=>{cursor.style.left=`${e.clientX}px`;cursor.style.top=`${e.clientY}px`});
+  const hero=document.querySelector('.hero');
+  addEventListener('pointermove',e=>{if(hero){hero.style.setProperty('--mx',`${e.clientX}px`);hero.style.setProperty('--my',`${e.clientY}px`)}});
   document.querySelectorAll('a,button,.deck-card').forEach(el=>{el.addEventListener('pointerenter',()=>cursor.classList.add('big'));el.addEventListener('pointerleave',()=>cursor.classList.remove('big'))});
   const deck=document.querySelector('#deck');
   deck.addEventListener('pointermove',e=>{const r=deck.getBoundingClientRect(),nx=(e.clientX-r.left)/r.width-.5,ny=(e.clientY-r.top)/r.height-.5;deck.style.transform=`rotateX(${ny*-5}deg) rotateY(${nx*7}deg)`;deck.querySelectorAll('.deck-card').forEach(card=>card.style.marginTop=`${ny*Number(card.dataset.depth)*-13}px`)});
