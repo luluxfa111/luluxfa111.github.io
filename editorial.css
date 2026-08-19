@@ -93,6 +93,13 @@ body{background:#f7f6f2;color:#151817}
 .actions{justify-content:flex-start;margin-left:4vw;margin-top:17px}.deck{margin-top:0!important;height:390px!important}
 @media(max-width:560px){.hero{min-height:790px;padding-top:105px}.hero>.eyebrow{margin-bottom:24px}.portfolio-title{width:90vw;margin-left:0;font-size:34px}.hero-manifesto{width:92vw;margin-left:0}.actions{margin-left:0}.deck{margin-top:8px!important}}
 
+/* No poster headline on the portfolio cover. The work comes first. */
+.hero .portfolio-title{width:min(520px,72vw)!important;margin:0 auto!important;text-align:center!important;font-size:clamp(24px,2.5vw,36px)!important;line-height:1.12!important;letter-spacing:-.045em!important;font-weight:600!important;color:#26332f!important;text-shadow:none!important}
+.hero .portfolio-title span,.hero .portfolio-title em{display:inline!important;font:inherit!important;color:inherit!important;background:none!important}
+.hero .portfolio-title em{font-family:Georgia,"Songti SC",serif!important;font-style:italic!important;color:#7a877f!important}
+.hero .hero-manifesto{margin-top:14px!important}
+@media(max-width:560px){.hero .portfolio-title{width:88vw!important;font-size:22px!important}.hero .hero-manifesto{margin-top:12px!important}}
+
 /* Soft glass layer: translucent, blurred, and used sparingly. */
 .nav{background:linear-gradient(110deg,#ffffffd9,#ffffff85 55%,#ffffffbc);border-color:#fff;box-shadow:0 18px 50px #19362b14,inset 0 1px #fff;backdrop-filter:blur(24px) saturate(1.12)}
 .deck-card{background:#ffffff52!important;border-color:#ffffffd9!important;box-shadow:0 28px 65px #203c3522,inset 0 1px #fff!important;backdrop-filter:blur(14px) saturate(1.08)}
