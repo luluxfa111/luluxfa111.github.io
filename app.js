@@ -4,6 +4,8 @@ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entr
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 if(!reduceMotion){
   const cursor=document.querySelector('.cursor');
+  let lastStar=0;
+  addEventListener('pointermove',e=>{if(Date.now()-lastStar<85)return;lastStar=Date.now();const star=document.createElement('i');star.className='cursor-star';star.textContent=Math.random()>.5?'✦':'·';star.style.left=`${e.clientX+(Math.random()*12-6)}px`;star.style.top=`${e.clientY+(Math.random()*12-6)}px`;document.body.append(star);setTimeout(()=>star.remove(),700)});
   addEventListener('pointermove',e=>{cursor.style.left=`${e.clientX}px`;cursor.style.top=`${e.clientY}px`});
   const hero=document.querySelector('.hero');
   addEventListener('pointermove',e=>{if(hero){hero.style.setProperty('--mx',`${e.clientX}px`);hero.style.setProperty('--my',`${e.clientY}px`)}});
