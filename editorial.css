@@ -175,6 +175,8 @@ main{background:#fff}
 .cases>.case .case-bottom{padding:15px 4px 2px!important}
 .cases>.case .case-bottom li{border-color:#1d282627!important;border-radius:999px!important;color:#65716b!important}
 .cases>.case .case-kicker{color:#8a958f!important}
+html,body,main,.hero,.section,.cases,.lab,.about,.personal,.contact{background-color:#fff!important;background-image:none!important}
+.grain,.orbit,.hero:before,.hero:after{display:none!important}
 .hero{min-height:800px!important;padding:112px 5vw 28px!important;text-align:left!important}
 .hero>.eyebrow{margin:0 0 28px!important;justify-content:flex-start!important}
 .portfolio-title{width:min(620px,78vw)!important;margin:0 0 16px!important;font-size:clamp(30px,3.9vw,56px)!important;line-height:1.02!important;text-align:left!important}
