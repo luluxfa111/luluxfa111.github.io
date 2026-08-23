@@ -164,6 +164,17 @@ main{background:#fff}
 .polaroid:hover{box-shadow:0 30px 54px #3941362b,0 2px 0 #fff inset!important}
 .polaroid-photo img{filter:saturate(.92) contrast(.98)!important}
 .marquee{display:none!important}
+.cases>.section-lead{display:none!important}
+.cases{padding-top:76px!important}
+.cases>.case{margin-bottom:34px!important;padding:18px!important;background:#fff!important;border:1px solid #1d28261a!important;border-radius:24px!important;box-shadow:0 18px 50px #1d28260b!important}
+.cases>.case .case-top{padding:2px 4px 14px!important;color:#78837d!important;font-size:8px!important;letter-spacing:.13em!important}
+.cases>.case .case-layout{min-height:0!important;padding:20px 4px 10px!important;gap:5vw!important}
+.cases>.case .case-copy h3{font-size:clamp(28px,3.5vw,48px)!important;letter-spacing:-.055em!important}
+.cases>.case .case-copy>p:not(.case-kicker){font-size:12px!important;line-height:1.7!important;color:#7b8680!important}
+.cases>.case .case-media{height:390px!important;border-radius:16px!important;background:#f5f6f3!important;box-shadow:none!important}
+.cases>.case .case-bottom{padding:15px 4px 2px!important}
+.cases>.case .case-bottom li{border-color:#1d282627!important;border-radius:999px!important;color:#65716b!important}
+.cases>.case .case-kicker{color:#8a958f!important}
 .hero{min-height:800px!important;padding:112px 5vw 28px!important;text-align:left!important}
 .hero>.eyebrow{margin:0 0 28px!important;justify-content:flex-start!important}
 .portfolio-title{width:min(620px,78vw)!important;margin:0 0 16px!important;font-size:clamp(30px,3.9vw,56px)!important;line-height:1.02!important;text-align:left!important}
