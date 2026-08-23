@@ -182,6 +182,9 @@ html,body,main,.hero,.section,.cases,.lab,.about,.personal,.contact{background-c
 .deck:before,.deck:after{display:none!important}
 .case-media,.shopline-scene,.workflow-scene,.pilot-scene,.terminal-scene,.weekend-scene{background:#fff!important;box-shadow:none!important}
 .case-media{border:1px solid #1d28260d!important}
+.cases,.lab,.archive{padding-top:52px!important;padding-bottom:82px!important}
+.cases + .lab,.lab + .archive{padding-top:36px!important}
+.archive-grid,.lab-grid{margin-top:0!important}
 .hero{min-height:800px!important;padding:112px 5vw 28px!important;text-align:left!important}
 .hero>.eyebrow{margin:0 0 28px!important;justify-content:flex-start!important}
 .portfolio-title{width:min(620px,78vw)!important;margin:0 0 16px!important;font-size:clamp(30px,3.9vw,56px)!important;line-height:1.02!important;text-align:left!important}
