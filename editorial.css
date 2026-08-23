@@ -191,7 +191,7 @@ html,body,main,.hero,.section,.cases,.lab,.about,.personal,.contact{background-c
 .hero .deck{margin-top:8px!important;height:480px!important}
 .hero .deck-card{top:78px!important;width:350px!important;height:252px!important;margin-left:-175px!important}
 .hero .d1{--tx:-365px!important;--ty:52px!important}.hero .d2{--tx:-184px!important;--ty:12px!important}.hero .d3{--tx:0px!important;--ty:-24px!important}.hero .d4{--tx:184px!important;--ty:12px!important}.hero .d5{--tx:365px!important;--ty:52px!important}
-.polaroid-wall{padding-top:66px!important;padding-bottom:78px!important}.polaroid-intro{margin-bottom:32px!important}
+.polaroid-wall{padding-top:48px!important;padding-bottom:38px!important}.polaroid-intro{margin-bottom:20px!important}.polaroid-intro p{display:none!important}
 @media(max-width:900px){.hero{min-height:590px!important}.hero .deck{height:400px!important}.hero .deck-card{width:290px!important;height:208px!important;margin-left:-145px!important}.hero .d1{--tx:-245px!important}.hero .d2{--tx:-122px!important}.hero .d4{--tx:122px!important}.hero .d5{--tx:245px!important}}
 @media(max-width:560px){.hero{min-height:480px!important;padding-top:86px!important}.hero .deck{height:330px!important}.hero .deck-card{width:235px!important;height:168px!important;margin-left:-117.5px!important}.hero .d1{--tx:-150px!important}.hero .d2{--tx:-75px!important}.hero .d4{--tx:75px!important}.hero .d5{--tx:150px!important}}
 .hero{min-height:800px!important;padding:112px 5vw 28px!important;text-align:left!important}
