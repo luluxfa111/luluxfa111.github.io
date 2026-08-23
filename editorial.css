@@ -131,3 +131,37 @@ html,body,.hero,.lab,.about,.personal{background-color:#fff}
 .nav{background:#fffffff2}
 /* Neutralize the legacy colored section fills so the whole page reads as one white canvas. */
 .marquee,.shopline,.black,.lime,.violet,.cream,.lab,.about,.personal,.contact{background:#fff!important;color:var(--ed-ink)}
+/* Final visual pass: white gallery canvas, restrained color accents, and paper-like project cards. */
+html{background:#fff;scroll-behavior:smooth}
+body{background:#fff;color:#1d2826;overflow-x:hidden}
+main{background:#fff}
+.hero{min-height:900px!important;padding-top:104px!important;background-color:#fff!important;background-image:linear-gradient(90deg,#1d28260b 1px,transparent 1px),linear-gradient(#1d282608 1px,transparent 1px)!important;background-size:25% 100%,100% 120px!important}
+.hero:before,.hero:after{opacity:.16!important}
+.eyebrow{border:0!important;background:transparent!important;padding-inline:0!important;color:#6d7974!important;letter-spacing:.18em!important}
+.portfolio-title{width:min(760px,88vw)!important;font-size:clamp(42px,5.3vw,76px)!important;line-height:.96!important;letter-spacing:-.065em!important;color:#1d2826!important}
+.portfolio-title em{color:#7a8d86!important;font-family:Georgia,"Songti SC",serif!important;font-weight:400!important}
+.hero-manifesto{margin-top:20px!important;gap:16px!important}.hero-manifesto strong{font-size:12px!important}.hero-manifesto p{font-size:10px!important;color:#87908b!important}
+.actions{margin-top:18px!important}.primary{background:#1d2826!important;box-shadow:none!important}.ghost{color:#1d2826!important}
+.deck{margin-top:42px!important;opacity:.98}
+.deck-card{border:1px solid #1d28261c!important;border-radius:20px!important;box-shadow:0 18px 44px #16251d15!important}
+.deck-card>div:last-child{background:#1d2826d9!important}
+.section{background:#fff!important}
+.section-lead{border-color:#1d28261f!important}.section-lead h2,.about h2,.personal-head h2{font-size:clamp(34px,4.5vw,62px)!important;line-height:1!important;color:#1d2826!important}.section-lead h2 em,.about h2 em,.personal-head h2 em{color:#8b9992!important}
+.case{background:#fff!important;border:1px solid #1d28261a!important;border-radius:28px!important;box-shadow:0 24px 70px #16251d0d!important}.case-top{color:#64716b!important;opacity:.8!important}.case-bottom{border-color:#1d28261a!important}
+.shopline{border-top:4px solid #e8a0a7!important}.black{border-top:4px solid #9bc8c0!important}.lime{border-top:4px solid #e2c86a!important}.violet{border-top:4px solid #b4a4d8!important}.cream{border-top:4px solid #e4b49e!important}
+.case-media{box-shadow:none!important}.case-copy h3{font-size:clamp(34px,4vw,58px)!important;color:#1d2826!important}.case-copy>p:not(.case-kicker){color:#718079!important}
+.lab,.about,.personal,.contact{background:#fff!important}.lab-card,.archive-card,.archive-feature,.personal-card{background:#fff!important;border:1px solid #1d28261a!important;box-shadow:0 18px 48px #16251d0b!important;backdrop-filter:none!important}
+.personal-card{min-height:300px!important}.personal-card h3{font-size:clamp(30px,3.5vw,48px)!important}
+.polaroid-wall{background:#fff!important;padding-top:clamp(90px,12vw,170px)!important;padding-bottom:clamp(100px,13vw,180px)!important}
+.polaroid-rope{left:8%!important;right:8%!important;top:clamp(65px,8vw,112px)!important;border-top:1px solid #766a5b66!important;transform:rotate(-1deg)!important}
+.polaroid-rope:before,.polaroid-rope:after{content:"";position:absolute;top:-4px;width:7px;height:7px;border-radius:50%;background:#e7a4a0;box-shadow:0 0 0 3px #fff}.polaroid-rope:before{left:28%}.polaroid-rope:after{right:22%;background:#a7cdbf}
+.polaroid-intro{margin-bottom:52px!important}.polaroid-intro span{color:#6d7974!important}.polaroid-intro p{color:#8b948e!important}
+.polaroid-row{gap:clamp(24px,4vw,58px)!important}
+.polaroid{padding:13px 13px 29px!important;background:#fff!important;border:1px solid #d9d8d1!important;box-shadow:0 18px 34px #39413618,0 2px 0 #fff inset!important}
+.polaroid-a{transform:rotate(-3deg) translateY(16px)}.polaroid-b{transform:rotate(1.5deg) translateY(-2px)}.polaroid-c{transform:rotate(3.5deg) translateY(18px)}
+.polaroid-photo{background:#f2f3ef!important}.polaroid-caption{padding:17px 5px 0!important}.polaroid-caption b{font-family:Inter,"PingFang SC",sans-serif!important;font-size:13px!important;font-weight:600!important}.polaroid-caption small{font-size:10px!important;color:#929891!important}
+.polaroid-clip{top:-17px!important;width:20px!important;height:40px!important;box-shadow:1px 3px 4px #5d44332b!important}.polaroid-a .polaroid-clip{background:linear-gradient(90deg,#e4a09f,#f4c7bb 48%,#bd7775)}.polaroid-b .polaroid-clip{background:linear-gradient(90deg,#9ec9bb,#d1e6d5 48%,#76a998)}.polaroid-c .polaroid-clip{background:linear-gradient(90deg,#dfc36c,#f1df9b 48%,#b9963e)}
+.polaroid:hover{box-shadow:0 30px 54px #3941362b,0 2px 0 #fff inset!important}
+.polaroid-photo img{filter:saturate(.92) contrast(.98)!important}
+.marquee{display:none!important}
+@media(max-width:700px){.hero{min-height:760px!important;padding-top:92px!important}.hero-manifesto{display:none!important}.deck{margin-top:28px!important}.polaroid-wall{padding-top:94px!important}.polaroid-intro{margin-bottom:36px!important}}
