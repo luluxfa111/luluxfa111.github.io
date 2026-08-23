@@ -183,6 +183,7 @@ html,body,main,.hero,.section,.cases,.lab,.about,.personal,.contact{background-c
 .case-media,.shopline-scene,.workflow-scene,.pilot-scene,.terminal-scene,.weekend-scene{background:#fff!important;box-shadow:none!important}
 .case-media{border:1px solid #1d28260d!important}
 .cases,.lab,.archive{padding-top:52px!important;padding-bottom:82px!important}
+.reveal.visible{opacity:1!important;transform:none!important}
 .cases + .lab,.lab + .archive{padding-top:36px!important}
 .archive-grid,.lab-grid{margin-top:0!important}
 .hero{min-height:650px!important;padding-top:98px!important;padding-bottom:18px!important}
