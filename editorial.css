@@ -124,3 +124,8 @@ body{background:#f7f6f2;color:#151817}
 .primary,.marquee,.personal{box-shadow:0 20px 45px #203c351c}
 @media(max-width:900px){.hero{min-height:920px}.deck{transform:scale(.82)!important}.deck-card{width:290px!important;margin-left:-145px!important}.d1{--tx:-250px}.d2{--tx:-125px}.d4{--tx:125px}.d5{--tx:250px}}
 @media(max-width:560px){.hero{min-height:820px;padding-top:112px}.portfolio-title{font-size:48px}.hero-manifesto{width:92%;}.deck{width:145%!important;margin-left:-22.5%!important;transform:scale(.58)!important}.deck-card{width:300px!important;height:220px!important;margin-left:-150px!important}.d1{--tx:-220px}.d2{--tx:-110px}.d4{--tx:110px}.d5{--tx:220px}.deck:before{left:14%}.deck:after{right:14%}}
+/* Global canvas: clean white instead of the previous warm paper tint. */
+:root{--ed-paper:#fff}
+html,body,.hero,.lab,.about,.personal{background-color:#fff}
+.hero{background-image:radial-gradient(circle at 50% 53%,#f1f5f6 0 18%,transparent 48%),linear-gradient(180deg,#fff,#fff)}
+.nav{background:#fffffff2}
