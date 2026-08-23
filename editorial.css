@@ -177,6 +177,10 @@ main{background:#fff}
 .cases>.case .case-kicker{color:#8a958f!important}
 html,body,main,.hero,.section,.cases,.lab,.about,.personal,.contact{background-color:#fff!important;background-image:none!important}
 .grain,.orbit,.hero:before,.hero:after{display:none!important}
+.nav,.section-lead,.case,.case-top,.case-bottom,.timeline,.contact footer{border:0!important;border-top:0!important;border-bottom:0!important}
+.deck:before,.deck:after{display:none!important}
+.case-media,.shopline-scene,.workflow-scene,.pilot-scene,.terminal-scene,.weekend-scene{background:#fff!important;box-shadow:none!important}
+.case-media{border:1px solid #1d28260d!important}
 .hero{min-height:800px!important;padding:112px 5vw 28px!important;text-align:left!important}
 .hero>.eyebrow{margin:0 0 28px!important;justify-content:flex-start!important}
 .portfolio-title{width:min(620px,78vw)!important;margin:0 0 16px!important;font-size:clamp(30px,3.9vw,56px)!important;line-height:1.02!important;text-align:left!important}
