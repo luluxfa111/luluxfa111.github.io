@@ -1,4 +1,5 @@
 const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduceMotion)document.documentElement.classList.add('motion-ready');
 
 document.querySelectorAll('.reveal').forEach((element)=>{
   if(reduceMotion){element.classList.add('visible');return;}
