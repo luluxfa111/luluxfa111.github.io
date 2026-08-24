@@ -1,496 +1,75 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="谢晓璐的 AI 产品经理作品集：从业务抽象、Agent 工作流到可运行产品。">
-<meta property="og:title" content="谢晓璐｜AI Product Manager">
-<meta property="og:description" content="让 AI 从能回答，走向能完成。">
-<meta property="og:type" content="website">
-<meta name="theme-color" content="#f4f3ef">
-<title>谢晓璐｜AI Product Manager</title>
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="palette.css">
-<link rel="stylesheet" href="personal.css">
-<link rel="stylesheet" href="summer.css">
-<link rel="stylesheet" href="editorial.css?v=20260825-5">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Lulu 的 AI 产品与交互作品集">
+  <title>Lulu｜Product Portfolio</title>
+  <link rel="stylesheet" href="portfolio.css?v=20260825-1">
 </head>
 <body>
-<div class="loader" aria-hidden="true">
-<div class="loader-deer"><img src="assets/xiaolu-deer-ip.png" alt="小鹿"></div>
-<i><b></b></i>
-<span>WELCOME TO LULU'S WORKSPACE</span>
-</div>
-<div class="grain">
-</div>
-<div class="cursor">
-</div>
-<header class="nav">
-<a class="brand magnetic" href="#top">
-<span>XL</span>
-<b>LULU / PORTFOLIO</b>
-</a>
-<nav>
-<a href="#cases">案例</a>
-<a href="#lab">探索</a>
-<a href="#archive">档案</a>
-<a href="#about">关于</a>
-</nav>
-<a class="nav-pill magnetic" href="assets/xiaolu-resume.pdf" target="_blank">RESUME ↗</a>
-</header>
-<main id="top">
-<section class="hero">
-<div class="orbit oa">
-</div>
-<div class="orbit ob">
-</div>
-<p class="eyebrow intro">
-<span class="live">
-</span>SELECTED WORKS · 2027</p>
-<h1 class="portfolio-title">
-<span>一些我做过的东西，</span>
-<em>和正在继续想的问题。</em>
-</h1>
-<div class="hero-manifesto intro" aria-label="个人定位">
-<strong>你好，我是 Lulu。</strong>
-<p>我喜欢把复杂的事情拆开，找到真正影响体验和效率的那一部分，再把它做成清楚、好用的产品。</p>
-</div>
-<div class="actions intro">
-<a class="primary magnetic" href="#cases">查看核心案例 <b>↓</b>
-</a>
-<button class="ghost magnetic" id="showreelBtn">
-<span>▶</span> 看看我的工作</button>
-</div>
-<div class="deck" id="deck">
-<article class="deck-card d1" data-depth=".45">
-<img src="assets/weekend-meet.jpg" alt="周末见" fetchpriority="high" decoding="async">
-<div>
-<small>05 / CONSUMER</small>
-<b>周末见</b>
-</div>
-</article>
-<article class="deck-card d2" data-depth=".7">
-<div class="job-art">
-<strong>JOB</strong>
-<p>脚本 · Playbook<br>执行 · 安全</p>
-</div>
-<div>
-<small>04 / B2B OPS</small>
-<b>智能作业系统</b>
-</div>
-</article>
-<article class="deck-card d3" data-depth="1">
-<div class="shopline-art">
-<strong>S</strong>
-<p>AGENT COMMERCE<br>TOOLS × SKILLS</p>
-</div>
-<div>
-<small>01 / SHOPLINE</small>
-<b>Agent Toolchain</b>
-</div>
-</article>
-<article class="deck-card d4" data-depth=".72">
-<img src="assets/workflow.jpg" alt="BlueKing Lite Agent 工作流" loading="lazy" decoding="async">
-<div>
-<small>02 / ENTERPRISE AI</small>
-<b>BlueKing Lite</b>
-</div>
-</article>
-<article class="deck-card d5" data-depth=".48">
-<img src="assets/jobpilot.png" alt="JobPilot" loading="lazy" decoding="async">
-<div>
-<small>03 / AI NATIVE</small>
-<b>JobPilot</b>
-</div>
-</article>
-</div>
-<div class="deck-shadow">
-</div>
-<div class="scroll-cue">
-<span>SCROLL TO EXPLORE</span>
-<i>
-</i>
-</div>
-</section>
-<section class="polaroid-wall section" id="polaroids" aria-label="Lulu's project snapshots">
-<div class="polaroid-rope" aria-hidden="true"></div>
-<div class="polaroid-intro"><span>PROJECT SNAPSHOTS / 01—03</span><p>把每个项目当作一张现场照片，记录它如何从想法变成可用的东西。</p></div>
-<div class="polaroid-row">
-<a class="polaroid polaroid-a" href="#cases"><span class="polaroid-clip" aria-hidden="true"></span><div class="polaroid-photo"><img src="assets/ai-storefront.png" alt="Lulu Atelier AI 建站成果" loading="lazy" decoding="async"></div><div class="polaroid-caption"><b>AI 建站 / Lulu Atelier</b><small>SHOPLINE · storefront / 2026</small></div></a>
-<a class="polaroid polaroid-b" href="#cases"><span class="polaroid-clip" aria-hidden="true"></span><div class="polaroid-photo"><img src="assets/n8n.jpg" alt="自动化工作流" loading="lazy" decoding="async"></div><div class="polaroid-caption"><b>Workflow notes</b><small>Data → action → delivery</small></div></a>
-<a class="polaroid polaroid-c" href="projects/weekend.html"><span class="polaroid-clip" aria-hidden="true"></span><div class="polaroid-photo"><img src="assets/weekend-meet.jpg" alt="周末见产品界面" loading="lazy" decoding="async"></div><div class="polaroid-caption"><b>周末见</b><small>A small product, made with care</small></div></a>
-</div>
-</section>
-<section class="cases section" id="cases">
-<div class="section-lead reveal">
-<p>SELECTED CASES / 01—05</p>
-<h2>项目不是功能清单，<br>
-<em>而是一连串有依据的选择。</em>
-</h2>
-<span>从 Agent 商业化工具链到独立产品，五个案例共同呈现我的产品判断与落地能力。</span>
-</div>
-<article class="case shopline reveal">
-<div class="case-top">
-<span>01 / AGENT COMMERCE TOOLCHAIN</span>
-<span>SHOPLINE · AI 产品经理实习 · 已脱敏</span>
-</div>
-<div class="case-layout">
-<div class="case-copy">
-<p class="case-kicker">SHOPLINE / 2026</p>
-<h3>让 Agent 真正调用<br>商家后台能力。</h3>
-<p>将商品、订单、库存、客户、Blog、主题与 SEO 等后台能力，抽象为 Agent 可理解、可组合、可控调用的工具链；参与 Codex、Claude、Accio 与 WebMCP 接入验证，并用真实站点验证 AI Agent 驱动建站与店铺运营的完整流程。</p>
-<div class="stats">
-<div>
-<b>8+</b>
-<span>类后台能力</span>
-</div>
-<div>
-<b>30+</b>
-<span>Agent Tools</span>
-</div>
-<div>
-<b>50—80%</b>
-<span>典型内容任务预估节时*</span>
-</div>
-</div>
-</div>
-<div class="case-media shopline-scene" data-parallax>
-<div class="intent">
-<span>HUMAN INTENT</span>
-<b>“为新品创建页面并完成基础 SEO”</b>
-</div>
-<div class="tool-route">
-<div>
-<i>01</i>
-<b>product.create</b>
-<em>READY</em>
-</div>
-<div>
-<i>02</i>
-<b>theme.section.update</b>
-<em>READY</em>
-</div>
-<div>
-<i>03</i>
-<b>seo.metadata.set</b>
-<em>READY</em>
-</div>
-</div>
-<div class="human-confirm">
-<span>HUMAN CONFIRMATION</span>
-<b>预览变更 → 确认发布</b>
-<a class="site-result" href="https://itslulu.xyz" target="_blank" rel="noopener">查看 AI 建站成果 ↗</a>
-</div>
-</div>
-</div>
-<div class="case-bottom">
-<ul>
-<li>Tool Schema</li>
-<li>MCP & Plugins</li>
-<li>Skill Design</li>
-<li>AI Site Building</li>
-</ul>
-<span>INTENT → TOOLS → PREVIEW → HUMAN CONFIRM</span>
-</div>
-<small class="estimate-note">* 基于图片处理、商品 SEO、描述生成与多语言改写等典型任务测算，非线上全量业务数据。</small>
-</article>
-<article class="case black reveal">
-<div class="case-top">
-<span>02 / ENTERPRISE AI</span>
-<span>嘉为蓝鲸 · 产品研发部实习</span>
-</div>
-<div class="case-layout">
-<div class="case-copy">
-<p class="case-kicker">BLUEKING LITE</p>
-<h3>从监控数据到行动，<br>做一条可信的 Agent 闭环。</h3>
-<p>参与 Monitor 监控产品和 AI 自动化巡检：从资源、指标、告警与策略的产品梳理，到 Agent 工作流、报告生成和邮件交付。重点不是“接一个模型”，而是让信息来源、调用过程和最终动作都可控。</p>
-<div class="stats">
-<div>
-<b>4</b>
-<span>核心监控模块</span>
-</div>
-<div>
-<b>15+</b>
-<span>场景化模板</span>
-</div>
-<div>
-<b>1</b>
-<span>自动交付闭环</span>
-</div>
-</div>
-</div>
-<div class="case-media workflow-scene" data-parallax>
-<img src="assets/workflow.jpg" alt="Agent 工作流" loading="lazy" decoding="async">
-<div class="node n1">监控数据</div>
-<div class="node n2">模型判断</div>
-<div class="node n3">报告交付 ✓</div>
-<i class="pulse p1">
-</i>
-<i class="pulse p2">
-</i>
-</div>
-</div>
-<div class="case-bottom">
-<ul>
-<li>业务抽象</li>
-<li>Agent Workflow</li>
-<li>产品文档</li>
-<li>安全边界</li>
-</ul>
-<span>PROBLEM → TOOL → WORKFLOW → DELIVERY</span>
-</div>
-</article>
-<article class="case lime reveal">
-<div class="case-top">
-<span>03 / AI NATIVE PRODUCT</span>
-<span>独立产品 · 可运行原型</span>
-</div>
-<div class="case-layout reverse">
-<div class="case-copy">
-<p class="case-kicker">JOBPILOT</p>
-<h3>把混乱招聘信息，<br>变成可信的下一步。</h3>
-<p>为自己的秋招场景设计个人求职工作台：保留信息原文与来源，拆分岗位、标注置信度、解释匹配依据，最后进入投递状态管理。AI 负责增强判断，但最终提交和敏感信息始终由人确认。</p>
-<div class="decision">
-<span>招聘原文</span>
-<i>→</i>
-<span>结构化岗位</span>
-<i>→</i>
-<span>证据匹配</span>
-<i>→</i>
-<span>人工确认</span>
-</div>
-</div>
-<div class="case-media pilot-scene" data-parallax>
-<div class="pilot-board">
-<header>
-<b>JobPilot</b>
-<small>可信匹配工作台</small>
-</header>
-<div class="score">
-<span>匹配度</span>
-<b>86</b>
-<i>%</i>
-</div>
-<div class="reasons">
-<span>✓ Agent 产品经历</span>
-<span>✓ B 端需求分析</span>
-<span>△ SQL 证据待补充</span>
-</div>
-<button>准备投递 →</button>
-</div>
-<img src="assets/jobpilot.png" alt="JobPilot 扩展" loading="lazy" decoding="async">
-</div>
-</div>
-<div class="case-bottom">
-<ul>
-<li>PRD</li>
-<li>Explainable AI</li>
-<li>Local Data</li>
-<li>Human-in-the-loop</li>
-</ul>
-<span>事实可追溯 · 判断可解释 · 执行需确认</span>
-</div>
-</article>
-<article class="case violet reveal">
-<div class="case-top">
-<span>04 / COMPLEX B2B PRODUCT</span>
-<span>15 个可交互页面</span>
-</div>
-<div class="case-layout">
-<div class="case-copy">
-<p class="case-kicker">JOB MANAGEMENT</p>
-<h3>把高风险运维操作，<br>设计成清晰、可控的流程。</h3>
-<p>围绕脚本执行、文件分发、定时任务和 Playbook 管理搭建完整信息架构，同时设计高危命令、高危路径与许可规则，把效率与风险控制放进同一条产品链路。</p>
-<div class="modules">
-<span>快速执行</span>
-<span>文件分发</span>
-<span>定时任务</span>
-<span>目标管理</span>
-<span>脚本库</span>
-<span>Playbook</span>
-<span>风险规则</span>
-<span>许可管理</span>
-</div>
-</div>
-<div class="case-media terminal-scene" data-parallax>
-<div class="terminal">
-<header>
-<i>
-</i>
-<i>
-</i>
-<i>
-</i>
-<span>JOB / 执行详情</span>
-</header>
-<p>
-<em>14:23:15</em> [INFO] 开始执行脚本...</p>
-<p>
-<em>14:23:22</em> 正在检查目标主机 2/2</p>
-<p>
-<em>14:23:31</em> 高危命令规则校验通过</p>
-<p class="success">
-<em>14:23:48</em> [EXIT] 执行成功，退出码 0</p>
-</div>
-<div class="security">RISK CHECKED</div>
-</div>
-</div>
-<div class="case-bottom">
-<ul>
-<li>Information Architecture</li>
-<li>B2B UX</li>
-<li>Prototype</li>
-<li>Risk Control</li>
-</ul>
-<a href="projects/job-system/首页.html">打开交互原型 ↗</a>
-</div>
-</article>
-<article class="case cream reveal">
-<div class="case-top">
-<span>05 / CONSUMER CONCEPT</span>
-<span>概念验证 · 待用户研究</span>
-</div>
-<div class="case-layout reverse">
-<div class="case-copy">
-<p class="case-kicker">周末见</p>
-<h3>不再推荐更多攻略，<br>只帮用户真的出发。</h3>
-<p>面向城市青年，把天气、距离、心情和社交边界组织成一份可执行的半日提案。用户可以独自保存，也可以加入低压力小队；活动后用一句感受留下非表演性的记录。</p>
-<blockquote>“同样喜欢散步的人，期待的聊天强度、人数和节奏可能完全不同。”</blockquote>
-</div>
-<div class="case-media weekend-scene" data-parallax>
-<img src="assets/weekend-meet.jpg" alt="周末见界面" loading="lazy" decoding="async">
-<div class="weather">23° · 微风 · 适合出发</div>
-<a class="weekend-demo-link" href="projects/weekend.html">打开互动 Demo ↗</a>
-</div>
-</div>
-<div class="case-bottom">
-<ul>
-<li>Product Strategy</li>
-<li>User Journey</li>
-<li>Safety Design</li>
-<li>Prototype</li>
-</ul>
-<span>北极星：每周被实际完成并留下记录的有效周末数</span>
-</div>
-</article>
-</section>
-<section class="lab section" id="lab">
-<div class="section-lead compact reveal">
-<p>EXPERIMENTS / SIDE QUESTS</p>
-<h2>保持好奇，<br>
-<em>也保持动手。</em>
-</h2>
-</div>
-<div class="lab-grid">
-<article class="lab-card reveal">
-<span>DATA MODELING</span>
-<h3>两次数学建模</h3>
-<p>NIPT 时点优化与异常判定；粉丝投票重建与竞赛公平性研究。</p>
-<b>GAM · COX · PSO · COHSS</b>
-</article>
-<article class="lab-card image reveal">
-<img src="assets/skin-butler.jpg" alt="肌智管家" loading="lazy" decoding="async">
-<div>
-<span>AI PRODUCT CONCEPT</span>
-<h3>肌智管家</h3>
-</div>
-</article>
-<article class="lab-card reveal">
-<span>LLM × ROBOTICS</span>
-<h3>机械臂辅助教学</h3>
-<p>自然语言任务、Blockly 编排、视觉标定与受控执行。</p>
-<a href="projects/robot.html">进入项目页 ↗</a>
-<a href="projects/robot-manual.html">查看操作手册 ↗</a>
-</article>
-<article class="lab-card image reveal">
-<img src="assets/toy-room.png" alt="AIGC 玩具包装" loading="lazy" decoding="async">
-<div>
-<span>AIGC VISUAL SYSTEM</span>
-<h3>IP 与玩具包装</h3>
-</div>
-</article>
-</div>
-</section>
-<section class="archive section" id="archive">
-<div class="section-lead compact reveal">
-<p>WORK ARCHIVE / THE MATERIALS BEHIND THE CASES</p>
-<h2>不止结果，<br><em>也保留过程。</em></h2>
-<span>这里放我做过的分析、原型、视觉实验和文档。它们不一定都是完整产品，但记录了我如何观察、推理和动手。</span>
-</div>
-<div class="archive-grid">
-<article class="archive-feature reveal">
-<div class="archive-copy"><span>01 / AGENT WORKFLOW</span><h3>从监控数据，到一封真正发出去的报告。</h3><p>保留数据、工作流、报告与邮箱交付的过程图，展示 BlueKing Lite 项目如何从信息整理走到自动化交付。</p><div class="archive-links"><a href="assets/archive/agent-workflow/监控数据.jpeg" target="_blank">监控数据 ↗</a><a href="assets/archive/agent-workflow/报告.jpeg" target="_blank">报告样例 ↗</a><a href="assets/archive/agent-workflow/对接邮箱.jpeg" target="_blank">邮箱交付 ↗</a></div></div>
-<div class="archive-strip"><img src="assets/archive/agent-workflow/workflow.jpeg" alt="Agent 工作流过程"><img src="assets/archive/agent-workflow/报告.jpeg" alt="自动生成报告"><img src="assets/archive/agent-workflow/对接邮箱.jpeg" alt="邮箱交付"></div>
-</article>
-<article class="archive-card reveal"><span>02 / VISUAL MAKING</span><h3>AIGC 玩具包装与电子精灵 IP</h3><p>从角色设定、线稿、表情，到室内场景和吸塑包装，完整保留视觉探索过程。</p><div class="archive-mosaic"><img src="assets/archive/ip/正视图.PNG" alt="电子精灵正视图"><img src="assets/archive/aigc/温馨室内场景3D卡通渲染.png" alt="玩具包装场景"></div><div class="archive-links"><a href="assets/archive/ip/三视图.PNG" target="_blank">IP 三视图 ↗</a><a href="assets/archive/aigc/温馨室内场景元素组件库吸塑包装.png" target="_blank">包装方案 ↗</a></div></article>
-<article class="archive-card reveal"><span>03 / RESEARCH & WRITING</span><h3>研究、数据与文档</h3><p>数学建模、体检数据分析、产品功能文档和肌智管家 UI，都是我把问题结构化的练习。</p><ul class="archive-file-list"><li><a href="assets/archive/research/数学建模.pdf" target="_blank">数学建模报告 <b>PDF ↗</b></a></li><li><a href="assets/archive/research/肌智管家ui.pdf" target="_blank">肌智管家 UI <b>PDF ↗</b></a></li><li><a href="projects/archive/feature.md" target="_blank">产品功能文档 <b>MD ↗</b></a></li><li><a href="assets/archive/research/260524000063.pdf" target="_blank">体检数据材料 <b>PDF ↗</b></a></li></ul></article>
-</div>
-</section>
-<section class="about section" id="about">
-<div class="portrait reveal">
-<img src="assets/portrait.jpg" alt="谢晓璐生活照" loading="lazy" decoding="async">
-<span>OPEN TO WORK · GUANGZHOU / SHENZHEN</span>
-</div>
-<div class="about-copy reveal">
-<p>ABOUT / LULU</p>
-<h2>理性拆解问题，<br>
-<em>感性理解人。</em>
-</h2>
-<p>华南师范大学信息管理与信息系统专业，正在寻找 2027 秋招 AI 产品经理机会。我的优势不只是会使用 AI 工具，而是能在业务、技术和体验之间建立结构，并把判断落实成可以演示、验证和交付的产品。</p>
-<div class="timeline">
-<div>
-<b>2026.05—至今</b>
-<span>SHOPLINE · AI 产品经理实习生</span>
-</div>
-<div>
-<b>2025.11—2026.05</b>
-<span>嘉为蓝鲸 · 产品研发部实习生</span>
-</div>
-<div>
-<b>2023—2027</b>
-<span>华南师范大学 · 信息管理与信息系统</span>
-</div>
-</div>
-</div>
-</section>
-<section class="personal section" id="personal">
-<div class="personal-head reveal"><p>BEYOND THE WORK</p><h2>工作之外，<br><em>我也认真感受生活。</em></h2><span>内容、观察与身体练习，是我保持好奇和创造力的方式。</span></div>
-<div class="personal-grid">
-<article class="personal-card creator reveal"><span>01 / CONTENT</span><h3>自媒体账号</h3><p>持续观察内容表达、用户反馈与平台节奏，把选题、视觉和数据复盘当作一场长期产品实验。</p><b>内容策划 · 视觉表达 · 数据复盘</b></article>
-<article class="personal-card photo reveal"><span>02 / PHOTOGRAPHY</span><h3>摄影</h3><p>喜欢记录日常里微妙的光线、物件与情绪。摄影让我更敏感地观察细节，也影响我的界面审美。</p><b>LIGHT · OBJECT · STORY</b></article>
-<article class="personal-card movement reveal"><span>03 / MOVEMENT</span><h3>普拉提与羽毛球</h3><p>一个训练控制与专注，一个带来速度和临场判断。它们帮助我在高强度工作里保持稳定。</p><b>PILATES · BADMINTON</b></article>
-</div>
-</section>
-<section class="contact section">
-<p class="reveal">NEXT CHAPTER / 2027</p>
-<h2 class="reveal">一起做点真正<br>
-<a href="mailto:lulu360510@outlook.com">能工作的东西。↗</a>
-</h2>
-<footer>
-<span>AI PRODUCT MANAGER · LULU</span>
-<span>© 2026</span>
-</footer>
-</section>
-</main>
-<div class="showreel" id="showreel" aria-hidden="true" role="dialog">
-<button id="closeReel">×</button>
-<div class="reel-words">
-<span>UNDERSTAND</span>
-<i>
-</i>
-<span>STRUCTURE</span>
-<i>
-</i>
-<span>BUILD</span>
-<i>
-</i>
-<span>DELIVER.</span>
-</div>
-<small>AE-STYLE WEB MOTION / 00:06</small>
-</div>
-<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-<script defer src="app.js?v=20260822-2">
-</script>
+  <header class="nav">
+    <a class="brand" href="#top"><span>LU</span><b>LULU / PORTFOLIO</b></a>
+    <nav aria-label="主导航"><a href="#work">作品</a><a href="#archive">更多</a><a href="#about">关于</a></nav>
+    <a class="resume" href="assets/xiaolu-resume.pdf" target="_blank">RESUME ↗</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="micro"><i></i> AI PRODUCT · DATA · VIBE CODING</p>
+        <h1>Hi, I’m Lulu.</h1>
+        <p>我把 AI、数据与业务问题，做成真实可用的产品。</p>
+      </div>
+      <div class="photo-line" aria-label="精选项目">
+        <span class="rope" aria-hidden="true"></span>
+        <a class="instant instant-a" href="#ai-storefront"><i class="clip pink" aria-hidden="true"></i><div class="instant-image"><img src="assets/ai-storefront-web.jpg" alt="Lulu Atelier AI 建站成果" fetchpriority="high" decoding="async"></div><footer><b>AI 建站 / Lulu Atelier</b><small>01 · SHOPLINE</small></footer></a>
+        <a class="instant instant-b" href="#shopline-agent"><i class="clip mint" aria-hidden="true"></i><div class="instant-image"><img src="assets/workflow-web.jpg" alt="AI Agent 工作流" decoding="async"></div><footer><b>AI Agent</b><small>02 · WORKFLOW</small></footer></a>
+        <a class="instant instant-c" href="projects/weekend.html"><i class="clip yellow" aria-hidden="true"></i><div class="instant-image"><img src="assets/weekend-meet-web.jpg" alt="周末见产品界面" decoding="async"></div><footer><b>周末见</b><small>03 · VIBE CODING</small></footer></a>
+      </div>
+      <a class="scroll-note" href="#work">SCROLL TO VIEW PROJECTS ↓</a>
+    </section>
+
+    <section class="work" id="work">
+      <header class="section-label"><span>SELECTED WORK / 01—05</span><p>图片是主角，文字只说明我解决了什么。</p></header>
+      <article class="project project-wide reveal" id="ai-storefront">
+        <a class="project-media" href="assets/ai-storefront-web.jpg" target="_blank"><img src="assets/ai-storefront-web.jpg" alt="Lulu Atelier AI 建站首页" loading="lazy" decoding="async"><span class="corner coral">AI STOREFRONT</span></a>
+        <div class="project-info"><span>01 / AI 建站</span><h2>Lulu Atelier</h2><p>从一句品牌想法到可浏览的独立站，把审美、商品叙事和页面结构一起落地。</p><b>AI BUILD · E-COMMERCE · VISUAL SYSTEM</b></div>
+      </article>
+      <article class="project project-split reveal" id="shopline-agent">
+        <div class="project-info"><span>02 / SHOPLINE</span><h2>AI Agent Toolchain</h2><p>围绕真实商家任务设计工具、Skills 与确认链路，让 Agent 能调用后台能力完成工作。</p><b>AGENT · DATA · BUSINESS EFFICIENCY</b></div>
+        <a class="project-media workflow-media" href="assets/workflow.jpg" target="_blank"><img src="assets/workflow-web.jpg" alt="Agent 工作流与数据处理" loading="lazy" decoding="async"><span class="corner mint-bg">WORKFLOW</span></a>
+      </article>
+      <article class="project project-split reverse reveal" id="weekend">
+        <a class="project-media weekend-media" href="projects/weekend.html"><img src="assets/weekend-meet-web.jpg" alt="周末见 App UI" loading="lazy" decoding="async"><span class="corner butter">OPEN DEMO ↗</span></a>
+        <div class="project-info"><span>03 / VIBE CODING</span><h2>周末见</h2><p>面向身边朋友的轻社交 App：根据天气、距离和心情，生成今天就能出发的周末计划。</p><a class="text-link" href="projects/weekend.html">体验互动版本 ↗</a></div>
+      </article>
+      <article class="project project-split reveal" id="job-system">
+        <div class="project-info"><span>04 / B2B PRODUCT</span><h2>Job Management</h2><p>覆盖脚本、Playbook、执行、定时任务与安全控制的作业管理原型。</p><a class="text-link" href="projects/job-system/首页.html">打开交互原型 ↗</a></div>
+        <a class="project-media phone-media" href="projects/job-system/首页.html"><div class="job-poster"><strong>JOB</strong><span>SCRIPT / PLAYBOOK / EXECUTION</span><img src="assets/jobpilot.png" alt="JobPilot 界面" loading="lazy" decoding="async"></div><span class="corner lavender">SYSTEM</span></a>
+      </article>
+      <article class="project project-wide reveal" id="robot">
+        <a class="project-media" href="projects/robot.html"><img src="assets/archive/agent-workflow/agent.jpeg" alt="机械臂与 Agent 任务过程" loading="lazy" decoding="async"><span class="corner blue">ROBOTICS ↗</span></a>
+        <div class="project-info"><span>05 / LLM × ROBOTICS</span><h2>机械臂辅助教学</h2><p>把自然语言拆成可理解、可编排、可确认的动作，让模型输出真正落到物理世界。</p><div class="inline-links"><a href="projects/robot.html">项目页 ↗</a><a href="projects/robot-manual.html">操作手册 ↗</a></div></div>
+      </article>
+    </section>
+
+    <section class="archive" id="archive">
+      <header class="section-label"><span>MORE NOTES / 06—09</span><p>研究、视觉与日常观察。</p></header>
+      <div class="archive-grid">
+        <a class="mini reveal" href="assets/archive/research/肌智管家ui.pdf" target="_blank"><img src="assets/skin-butler.jpg" alt="肌智管家 UI" loading="lazy" decoding="async"><footer><b>肌智管家</b><small>HEALTH DATA / UI</small></footer></a>
+        <a class="mini reveal" href="assets/archive/aigc/温馨室内场景3D卡通渲染.png" target="_blank"><img src="assets/toy-room-web.jpg" alt="AIGC 室内玩具场景" loading="lazy" decoding="async"><footer><b>AIGC 玩具场景</b><small>VISUAL MAKING</small></footer></a>
+        <a class="mini reveal" href="assets/archive/ip/三视图.PNG" target="_blank"><img src="assets/ip-front-web.jpg" alt="电子精灵 IP" loading="lazy" decoding="async"><footer><b>电子精灵 IP</b><small>CHARACTER DESIGN</small></footer></a>
+        <a class="mini reveal" href="assets/archive/research/数学建模.pdf" target="_blank"><div class="data-poster"><strong>DATA</strong><span>MODELING / ANALYSIS / REPORT</span></div><footer><b>数据分析与研究</b><small>PDF ARCHIVE ↗</small></footer></a>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <img src="assets/portrait-web.jpg" alt="Lulu" loading="lazy" decoding="async">
+      <div><p class="micro">ABOUT LULU</p><h2>产品、内容与生活观察。</h2><p>关注 AI Agent 如何进入真实业务，也喜欢摄影、普拉提和羽毛球。求职方向：AI 产品经理 / 数据产品 / 平台产品。</p><div class="tags"><span>AI AGENT</span><span>DATA</span><span>CONTENT</span><span>PHOTOGRAPHY</span></div><a class="contact-link" href="mailto:lulu360510@outlook.com">lulu360510@outlook.com ↗</a></div>
+    </section>
+  </main>
+  <footer class="site-footer"><span>LULU / PRODUCT PORTFOLIO</span><span>© 2026</span></footer>
+  <script src="portfolio.js?v=20260825-1" defer></script>
 </body>
 </html>
