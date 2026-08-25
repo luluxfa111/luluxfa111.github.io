@@ -80,6 +80,17 @@ img { display: block; max-width: 100%; }
 .butter { background: #f3df96; }
 .lavender { background: #dbd4ef; }
 .blue { background: #cce1ef; }
+
+.process { width: min(1180px, calc(100% - 48px)); margin: 6px auto 0; padding: 28px 0 52px; border-top: 1px solid var(--hairline); }
+.process-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.process-card { min-width: 0; padding: 8px 8px 18px; border: 1px solid var(--hairline); background: #fff; box-shadow: 0 12px 30px rgba(26, 33, 29, .07); transform: rotate(-.35deg); }
+.process-card:nth-child(2) { transform: rotate(.35deg); }
+.process-card:nth-child(3) { transform: rotate(-.2deg); }
+.process-card img { width: 100%; aspect-ratio: 1.55; object-fit: cover; background: #f5f5f3; }
+.process-card div { padding: 14px 4px 0; }
+.process-card span { color: #78817c; font: 700 7px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; }
+.process-card h3 { margin: 10px 0 8px; font-size: 17px; line-height: 1.2; letter-spacing: -.03em; }
+.process-card p { margin: 0; color: #6b7570; font-size: 11px; line-height: 1.65; }
 .archive { padding-top: 50px; padding-bottom: 66px; }
 .archive-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .mini { min-width: 0; padding: 8px 8px 14px; border: 1px solid var(--hairline); border-radius: 3px; background: #fff; box-shadow: 0 12px 30px rgba(26, 33, 29, .07); transition: transform .45s var(--ease), box-shadow .4s var(--ease); }
@@ -118,6 +129,7 @@ img { display: block; max-width: 100%; }
   .project-media > img { min-height: 290px; }
   .weekend-media { height: 390px; }
   .archive-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .process-grid { grid-template-columns: 1fr; gap: 14px; }
 }
 
 @media (max-width: 640px) {
@@ -157,6 +169,9 @@ img { display: block; max-width: 100%; }
   .mini footer b { display: block; font-size: 10px; }
   .mini footer small { display: block; margin-top: 5px; }
   .about { width: calc(100% - 28px); margin: 10px auto 42px; grid-template-columns: 112px 1fr; gap: 20px; align-items: start; }
+  .process { width: calc(100% - 28px); padding: 24px 0 36px; }
+  .process .section-label span:last-child { display: none; }
+  .process-card h3 { font-size: 16px; }
   .about > img { border-width: 5px; }
   .about h2 { margin: 10px 0 12px; font-size: 28px; }
   .about div > p:not(.micro) { font-size: 10px; line-height: 1.7; }
